@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【您的品牌名稱】 - 醇厚品味，啟動美好一天</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="section brand-identity">
+        <div class="content-wrapper">
+            <img src="logo.png" alt="[您的品牌名稱] LOGO" class="logo">
+            <h1>每一口，都是新鮮的啟程</h1>
+            <p>我們致力於從產地到杯中，提供最優質且創新的咖啡體驗。</p>
+        </div>
+    </header>
+
+    <section class="section brand-concept">
+        <div class="content-wrapper">
+            <h2>我們的品牌理念：從豆到心的堅持</h2>
+            <div class="concept-details">
+                <p>在 [您的品牌名稱]，我們相信最好的咖啡源於對細節的專注。我們親自挑選來自世界各地的優質咖啡豆，堅持使用友善環境的烘焙技術，只為將那份最純粹、最令人驚喜的風味帶到您的手中。</p>
+                <p>我們不只是一杯咖啡，更是一種生活態度：專注、熱情、不斷探索。</p>
+                <img src="brand-concept-img.jpg" alt="品牌理念展示圖：優質咖啡豆與烘焙過程" class="concept-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="section featured-product">
+        <div class="content-wrapper">
+            <h2>主打商品：[商品名稱] - 探索味蕾的無限可能</h2>
+            <div class="product-details">
+                <p>隆重推出我們的明星商品 **[商品名稱]**！這是一款融合了 [風味特色 A] 與 [風味特色 B] 的獨特配方。無論是濃郁的黑咖啡，還是搭配牛奶的拿鐵，都能完美展現其平衡且層次豐富的口感。</p>
+                <ul>
+                    <li>**獨特風味：** [具體描述，如帶有柑橘香和堅果尾韻]</li>
+                    <li>**烘焙程度：** [例如：中度烘焙，保留豆子最佳特色]</li>
+                    <li>**適合：** [例如：手沖、義式濃縮]</li>
+                </ul>
+                <img src="main-product-img.jpg" alt="主打商品照片：[商品名稱] 咖啡" class="product-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-form">
+        <div class="content-wrapper">
+            <h2>聯絡我們 - 展開您的咖啡探索之旅</h2>
+            <p>對我們的品牌或商品有任何疑問嗎？歡迎填寫下方表單，我們將盡快與您聯繫。</p>
+
+            <form action="submit-form.php" method="POST" class="contact-form-layout">
+                <div class="form-group">
+                    <label for="name">您的姓名：</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">電子郵件：</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">主旨：</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">您的訊息：</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">送出</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 [您的品牌名稱] 版權所有</p>
+    </footer>
+
+</body>
+</html>
