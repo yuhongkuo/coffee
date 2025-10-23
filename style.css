@@ -1,0 +1,204 @@
+/* style.css - 深沉咖啡色系風格 */
+
+/* 1. CSS 變數：調整為更深沉、飽和度更高的棕色系 */
+:root {
+    --color-primary: #5A392A;     /* 深摩卡色 - 主要色 (標題/按鈕) */
+    --color-secondary: #ffffff;   /* 焦糖色 - 輔助色 */
+    --color-text: #F5F5DC;        /* 米白色 - 確保在高對比背景下易讀 */
+    --color-light: #ffffff;       /* 深棕色 - 區塊背景基礎色 */
+    --color-background-base: #2C1E18; /* 極深背景色 */
+    --color-accent: #DAA520;      /* 金色 - 點綴色 (如按鈕hover) */
+    --border-radius-large: 15px;
+    --box-shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.4); /* 更明顯的陰影 */
+}
+
+/* 2. 基本與背景設定 */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text); /* 頁面基礎文字色為米白色 */
+    line-height: 1.8;
+    background-color: var(--color-background-base); /* 整個頁面最底層的深色 */
+}
+
+/* 3. 滾動時的模糊半透明背景圖片 (Fixed Background Effect) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 替換為您的背景圖片 URL */
+    background-image: url('coffee.png'); 
+    background-size: cover;
+    background-attachment: fixed; 
+    opacity: 0.8; /* 略微增加透明度，讓深色背景紋理更明顯 */
+    filter: blur(4px); /* 增加模糊度 */
+    z-index: -1; 
+}
+
+
+/* 4. 區塊置中、深色柔光與圓角、**邊界不碰視窗** */
+.section {
+    padding: 80px 0;
+    text-align: center;
+    /* 核心修改：深色半透明背景，提供高對比度 */
+    background-color: rgba(224, 172, 149, 0.3); /* 極深的咖啡色，半透明 */
+    /* 確保區塊邊界不碰到視窗的關鍵 */
+    margin: 30px 4vw; /* 上下30px，左右4%的視窗寬度作為邊距 */
+    border-radius: var(--border-radius-large); 
+    box-shadow: var(--box-shadow-soft); 
+}
+
+/* 第一個區塊 (Header) 可不使用區塊背景，讓它更輕盈 */
+.brand-identity {
+    background-color: transparent;
+    box-shadow: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px; /* 確保頂部有空間 */
+    margin-bottom: 0;
+}
+
+.content-wrapper {
+    max-width: 850px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* 5. 圖片樣式：圓角與柔光陰影 */
+.logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.concept-image,
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto; 
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); /* 圖片陰影使用淺色，增加對比 */
+    border: 3px solid var(--color-secondary); 
+}
+
+/* 6. 標題樣式 */
+h1 { 
+    color: var(--color-text); /* 主標題使用米白色 */
+    font-size: 3em; 
+    margin-bottom: 10px;
+    letter-spacing: 2px; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 增加文字層次感 */
+}
+h2 { 
+    color: var(--color-secondary); /* 次級標題使用焦糖色 */
+    font-size: 2.2em; 
+    margin-top: 0; 
+    margin-bottom: 25px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* 7. 內文與列表顏色調整 */
+.section p, .section ul {
+    color: var(--color-text); /* 內文確保是米白色 */
+}
+
+
+/* 8. 聯絡表單樣式 */
+.contact-form-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 450px; 
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-secondary); /* 標籤文字使用焦糖色 */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 8px; 
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.1); /* 輸入框使用淺半透明色 */
+    color: var(--color-text); /* 輸入文字顏色 */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-accent); /* 聚焦時變為金色 */
+    outline: none;
+}
+
+.submit-button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: var(--border-radius-large); 
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+}
+
+.submit-button:hover {
+    background-color: var(--color-accent); 
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* 頁腳 (可選) */
+.footer {
+    padding: 20px 0;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.9em;
+    border-radius: var(--border-radius-large);
+    /* 確保頁腳也有外邊距 */
+    margin: 30px 4vw 50px 4vw; 
+    box-shadow: var(--box-shadow-soft);
+}
+
+
+/* 響應式微調 */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 0;
+        margin: 20px 2vw; /* 減少行動裝置上的邊距，但仍保留空間 */
+    }
+    .footer {
+        margin: 20px 2vw 30px 2vw;
+    }
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.6em; }
+}
